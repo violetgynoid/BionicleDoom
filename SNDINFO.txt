@@ -1,4 +1,8 @@
 Weapons/CordakFire CFIRE
+Weapons/Explode1 CTM_SFX_EXPLODELARGE
+Weapons/Explode2 CTM_SFX_EXPLODESMALL
+Weapons/Cordak1 CTM_SFX_FIREMISSILELARGE
+Weapons/Cordak2 CTM_SFX_FIREMISSILESMALL
 
 Monsters/BohrokSee BWAKE
 Monsters/WeaponL1 WPNL1
@@ -22,4 +26,6 @@ Destruction/Huge2 DESTH2
 Destruction/Huge3 DESTH3
 Destruction/Huge4 DESTH4
 
-$Limit Weapons/CordakFire    	0
+$Limit Weapons/CordakFire	0
+$Limit Weapons/Cordak1	0  
+$Limit Weapons/Cordak2	0  

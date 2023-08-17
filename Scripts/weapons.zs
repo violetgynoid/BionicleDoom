@@ -362,7 +362,7 @@ class Cordak : Chaingun
 		CDKB A 1 A_Raise;
 		Loop;
 	Fire:
-		CDKB A 0 A_PlaySound("Weapons/CordakFire", CHAN_WEAPON);
+		CDKB A 0 A_PlaySound("Weapons/Cordak2", CHAN_WEAPON);
 		CDKF AB 4 A_FireProjectile("CordakRocket", 0, 1, 0, 0);
 		CDKB B 0 A_ReFire;
 		Goto Ready;
@@ -396,7 +396,7 @@ Class CordakRocket : FastProjectile
 		Death:
 			CDKE A 8 Bright;
 			CDKE B 6 Bright;
-			CDKE C 4 Bright;
+			CDKE C 4 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
 			Stop;
 		}
 }
