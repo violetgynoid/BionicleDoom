@@ -5,10 +5,12 @@ class TShotgun : Shotgun replaces Shotgun
 	Default
 	{
 	Weapon.SelectionOrder 1299;
+	Weapon.SlotNumber 2;
 	Inventory.PickupMessage "You got the Technic Shotgun!";
 	Obituary "%o was blasted with the Technic Shotgun!";
 	Tag "Technic Shotgun";
-	Scale 0.6667;
+	Weapon.WeaponScaleX 0.6667;
+	Weapon.WeaponScaleY 0.8004;
 	}
 	States
 	{
@@ -223,6 +225,8 @@ Class AirSword: Weapon
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "Clip";
 		Scale 0.6667;
+		Weapon.WeaponScaleX 0.6667;
+		Weapon.WeaponScaleY 0.8004;
 		+WEAPON.MELEEWEAPON
 	}
 	states

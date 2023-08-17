@@ -2,8 +2,8 @@ class Bordakh : DoomImp replaces DoomImp
 {
 	Default
 		{
-		HitObituary "%O was clobbered by a Vahki's staff!";
-		Obituary "%O couldn't surrender or run!" ;
+		HitObituary "%o was clobbered by a Vahki's staff!";
+		Obituary "%o couldn't surrender or run!" ;
 		Tag "Vahki Bordakh" ;
 		}
 	States
@@ -57,10 +57,9 @@ Class VahkiDisk: Actor
     Speed 10;
 	FastSpeed 20;
     Damage 3;
-    XScale 1;
-    YScale 1;
-    SeeSound "";
-    //DeathSound "Weapons/KarasawaHit";
+    XScale 0.667;
+    YScale 0.667;
+    //DeathSound "";
     Projectile;
 	+RANDOMIZE
     +StrifeDamage
@@ -82,9 +81,9 @@ class Tahnok : ZombieMan replaces ZombieMan
 {
 		Default
 		{
-		SeeSound "Monsters/BohrokSee" ;
+		SeeSound "Bohrok/wake1" ;
 		AttackSound "Monsters/WeaponL3" ; 
-		DeathSound "Destruction/Small1";
+		DeathSound "Bohrok/Wakeup";
 		Obituary " %o was cleansed by the Bohrok!" ;
 		Tag "Bohrok Tahnok" ;
 		}
@@ -136,9 +135,9 @@ class Kohrak : ShotgunGuy replaces ShotgunGuy
 {
 		Default
 		{
-		SeeSound "Monsters/BohrokSee" ;
+		SeeSound "Bohrok/Wakeup" ;
 		AttackSound "Monsters/WeaponL3" ; 
-		DeathSound "Destruction/Small1";
+		//DeathSound "Bohrok/Wakeup";
 		Obituary " %o was cleansed by the Bohrok!" ;
 		Tag "Bohrok Kohrak" ;
 		}
