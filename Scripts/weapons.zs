@@ -9,6 +9,7 @@ class TShotgun : Shotgun replaces Shotgun
 	Obituary "%o was blasted with the Technic Shotgun!";
 	Tag "Technic Shotgun";
 	Scale 0.6667;
+	Weapon.SlotNumber 3;
 	}
 	States
 	{
