@@ -1,8 +1,8 @@
 Weapons/CordakFire CFIRE
 Weapons/Explode1 CTM_SFX_EXPLODELARGE
 Weapons/Explode2 CTM_SFX_EXPLODESMALL
-Weapons/Cordak1 CTM_SFX_FIREMISSILELARGE
-Weapons/Cordak2 CTM_SFX_FIREMISSILESMALL
+Weapons/Cordak1 CTM_sfx_firemissilelarge
+Weapons/Cordak2 CTM_sfx_firemissilesmall
 
 Monsters/BohrokSee BWAKE
 Monsters/WeaponL1 WPNL1

@@ -1,4 +1,4 @@
-map bio1 "MAP01"
+map MAP01 "MAP01"
 {
 	music = "killing_machines_mix"
 	next = MAP02
