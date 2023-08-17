@@ -24,7 +24,7 @@ Bohrok/wake6 = "Sounds/Monsters/Bohrok/Bohrok_Wake6.wav"
 Bohrok/wake7 = "Sounds/Monsters/Bohrok/Bohrok_Wake7.wav"
 Bohrok/wake8 = "Sounds/Monsters/Bohrok/Bohrok_Wake8.wav"
 
-$random Bohrok/Wakeup {Bohrok/wake1 Bohrok/wake2}
+$random Bohrok/Wakeup {Bohrok/wake1 Bohrok/wake2 Bohrok/wake3 Bohrok/wake4 Bohrok/wake5 Bohrok/wake6 Bohrok/wake7 Bohrok/wake8}
 
 
 Destruction/Small1 = DSM1
