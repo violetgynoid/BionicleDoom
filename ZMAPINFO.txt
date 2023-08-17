@@ -1,0 +1,25 @@
+map bio1 "MAP01"
+{
+	music = "killing_machines_mix"
+	next = MAP02
+}
+gameinfo
+	{
+	ForceTextInMenus = true
+	TitleMusic = "command_the_toa_mahri_overture_mix"
+	TitlePage = "kramer"
+	IntermissionMusic = "destruction_mix"
+	QuitMessages = "Surrender or run!","Are you really running from your destiny?","Saving the universe is your duty!","Are you not Mata Nui's bravest hero?","What would your Turaga think of you running away?","Don't give up on your destiny!","What about the Toa Code?","Keep on fighting for the Great Spirit!","Don't go - Makuta could be on your desktop!","Are you not the hero we thought you were?","But you're the savior of the Matoran!"
+	NoRandomPlayerClass = true
+	PlayerClasses = "Lhikan","Nokama","Lesovikk","Pohatu","Bomonga","Matoro"
+	MenuFontColor_Title = "fire"
+	MenuFontColor_Label = "white"
+	MenuFontColor_Value = "white"
+	MenuFontColor_Action = "DarkGray"
+	MenuFontColor_header = "Fire"
+	MenuFontColor_Highlight = "fire"
+	MenuFontColor_Selection = "gold"
+	MenuSliderColor = "gray"
+	MenuSliderBackColor = "black"
+	}
+	

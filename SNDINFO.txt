@@ -1,0 +1,25 @@
+Weapons/CordakFire CFIRE
+
+Monsters/BohrokSee BWAKE
+Monsters/WeaponL1 WPNL1
+Monsters/WeaponL2 WPNL2	
+Monsters/WeaponL3 WPNL3	
+Monsters/WeaponMed1 WPNM1
+Monsters/WeaponMed2 WPNM2
+Monsters/WeaponHvy1 WPNH1
+Monsters/WeaponHvy2 WPNH2
+
+Destruction/Small1 DSM1
+Destruction/Small2 DSM2
+Destruction/Small3 DSM3
+Destruction/Med1 DESTM1
+Destruction/Med2 DESTM2
+Destruction/Big1 DESTB1
+Destruction/Big2 DESTB2
+Destruction/Big3 DESTB3
+Destruction/Huge1 DESTH1
+Destruction/Huge2 DESTH2
+Destruction/Huge3 DESTH3
+Destruction/Huge4 DESTH4
+
+$Limit Weapons/CordakFire    	0

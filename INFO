@@ -1,0 +1,11 @@
+Name: Socket
+Class: 6
+Type: Melee
+Palette: Doom
+Summon: Socket
+Ammo Type: KSawCell (Custom)
+Altfire: No
+Powered Mode: No
+Brightmaps: No
+Actor modification: No
+ACS: No
