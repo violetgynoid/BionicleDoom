@@ -1,3 +1,5 @@
+
+
 Weapons/CordakFire = CFIRE
 Weapons/Explode1 = "Sounds/Weapons/CTM_SFX_EXPLODELARGE.mp3"
 Weapons/Explode2 = "Sounds/Weapons/CTM_SFX_EXPLODESMALL.mp3"
@@ -14,6 +16,9 @@ Monsters/WeaponHvy1 = WPNH1
 Monsters/WeaponHvy2 = WPNH2
 
 
+//
+// Bohrok and Bohrok-Kal // 
+//
 
 Bohrok/wake1 = "Sounds/Monsters/Bohrok/Bohrok_Wake1.wav"
 Bohrok/wake2 = "Sounds/Monsters/Bohrok/Bohrok_Wake2.wav"
@@ -25,6 +30,23 @@ Bohrok/wake7 = "Sounds/Monsters/Bohrok/Bohrok_Wake7.wav"
 Bohrok/wake8 = "Sounds/Monsters/Bohrok/Bohrok_Wake8.wav"
 
 $random Bohrok/Wakeup {Bohrok/wake1 Bohrok/wake2 Bohrok/wake3 Bohrok/wake4 Bohrok/wake5 Bohrok/wake6 Bohrok/wake7 Bohrok/wake8}
+
+Kal/wake1 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake1.wav"
+Kal/wake2 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake2.wav"
+Kal/wake3 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake3.wav"
+Kal/wake4 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake4.wav"
+Kal/wake5 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake5.wav"
+Kal/wake6 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake6.wav"
+Kal/wake7 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake7.wav"
+Kal/wake8 = "Sounds/Monsters/Lehvak-Kal/Kal_Wake8.wav"
+
+$random Kal/Wakeup {Kal/wake1 Kal/wake2 Kal/wake3 Kal/wake4 Kal/wake5 Kal/wake6 Kal/wake7 Kal/wake8}
+
+
+
+//
+// Other //
+//
 
 
 Destruction/Small1 = DSM1
