@@ -136,9 +136,9 @@ class Socket : Weapon
 		Goto Ready;
 		}
 }
-
+//
 // Player Character Weapons // 
-
+//
 class LhikanSword : Weapon
 {
 	Default
@@ -223,7 +223,8 @@ Class AirSword: Weapon
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "Clip";
-		Scale 0.6667;
+		Weapon.WeaponScaleX 0.6667;
+		Weapon.WeaponScaley 0.8005;
 		+WEAPON.MELEEWEAPON
 	}
 	states
@@ -330,26 +331,22 @@ class MatoroClaws : Weapon
 		}
 }
 
-// --------------------------------------------------------------------------
 //
 // Cordak
 //
-// --------------------------------------------------------------------------
 
-class Cordak : Chaingun
+class Cordak : Weapon
 {
 	Default
 	{
 		Weapon.SelectionOrder 750;
 		Weapon.BobStyle "Smooth";
 		Weapon.SlotNumber 4;
-		Weapon.AmmoUse 1;
-		Weapon.AmmoGive 20;
-		Weapon.AmmoType "Clip";
+		Weapon.AmmoUse 3;
+		Weapon.AmmoGive 30;
 		Inventory.PickupMessage "You got the Cordak Blaster!";
 		Obituary "%o was blasted to bits by %k's Cordak Blaster!";
 		Tag "Cordak Blaster";
-	
 	}
 	States
 	{
@@ -364,7 +361,10 @@ class Cordak : Chaingun
 		Loop;
 	Fire:
 		CDKB A 0 A_PlaySound("Weapons/Cordak2", CHAN_WEAPON);
-		CDKF AB 4 A_FireProjectile("CordakRocket", 0, 1, 0, 0);
+		CDKB A 2;
+		CDKF A 5 A_FireProjectile("CordakRocket", 0, 1, 0, 0);
+		CDKF B 5;
+		CDKB B 2;
 		CDKB B 0 A_ReFire;
 		Goto Ready;
 	Flash:
@@ -396,12 +396,16 @@ Class CordakRocket : FastProjectile
 			Loop;
 		Death:
 			CDKE A 8 Bright;
-			CDKE B 6 Bright;
-			CDKE C 4 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
+			CDKE B 0 Bright A_Explode(30, 64);
+			CDKE B 6 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
+			CDKE C 4 Bright;
 			Stop;
 		}
 }
-//Class ElemEn : Clip replaces Clip
+
+//
+// Kanoka Launcher 
+//
 
 Class KanokaLauncher : Weapon 
 {
@@ -455,9 +459,8 @@ Class KanokaDisk : Actor
     XScale 1;
     YScale 1;
     SeeSound "";
-    //DeathSound "Weapons/KarasawaHit";
+    DeathSound "";
     Projectile;
-    +StrifeDamage
     +HexenBounce
     +CanBounceWater
     +SkyExplode
@@ -472,5 +475,84 @@ Class KanokaDisk : Actor
     KNKF DEF 2;
     Stop;
   }
+}
+///
+/// Midak Skyblaster
+///
+Class Midak : Weapon
+{
+	Default
+	{
+		Weapon.AmmoUse 1;
+		Weapon.AmmoGive 2;
+		Weapon.SlotNumber 5;
+		Weapon.SelectionOrder 2501;
+		Weapon.BobStyle "Smooth";
+		Weapon.AmmoType "RocketAmmo"; //Change to LightEnergy later?
+		YScale 0.6667;
+		XScale 0.8004;
+		Weapon.WeaponScaleX 0.6667;
+		Weapon.WeaponScaleY 0.8004;
+		+WEAPON.NOAUTOFIRE;
+		Inventory.PickupMessage "You got the Midak Skyblaster!";
+		Tag "Midak Skyblaster";
+	}
+	states
+	{
+		Ready:
+			MIDK A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			MIDK A 1 A_Lower;
+			Loop;
+		Select:
+			MIDK A 1 A_Raise;
+			Loop;
+		Fire:
+			MIDK B 8 A_GunFlash;
+			MIDK C 8 A_FireProjectile("LightBall");
+			MIDK D 4;
+			MIDK E 4 A_ReFire;
+			Goto Ready;
+		Flash:
+			MIDF B 8 Bright A_Light1;
+			MIDF C 8 Bright; 
+			MIDF D 4 Bright A_Light2;
+			Goto LightDone;
+		Spawn:
+			MIDK F -1;
+			Stop;
+		}
+}
+Class LightBall : Actor // Sprites to be replaced
+{
+  Default
+  {
+    BounceFactor 0.85;
+	WallBounceFactor 0.85;
+    Radius 8;
+    Height 4;
+    Speed 55;
+    Damage 30;
+    XScale 0.6667;
+    YScale 0.8004;
+    //SeeSound "";
+    //DeathSound "",
+    Projectile;
+
+  }
+	States
+	{
+		Spawn:
+			MIDB A 1 Bright;
+			Loop;
+		Death:
+			MIDB A 7 Bright;
+			MIDB B 1 Bright A_Explode(30, 64);
+			MIDB C 6 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
+			MIDB D 4 Bright;
+			Stop;
+		}
+
 }
 		
