@@ -477,7 +477,7 @@ Class KanokaDisk : Actor
   }
 }
 ///
-/// Midak Skyblaster
+/// Midak Skyblaster: Tweak like ALL of these god damn values idgaf
 ///
 Class Midak : Weapon
 {

@@ -6,7 +6,7 @@ version "4.1.0"
 #include "/Scripts/monsters.zs"
 #include "/Scripts/decorations.zs"
 #include "/Scripts/gameinfo.zs"
-
+#include "/Scripts/pickups.zs"
 
 
 
