@@ -97,8 +97,8 @@ class Tahnok : ZombieMan replaces ZombieMan
 		Loop;
 	Melee:
 		TAHN E 5 A_FaceTarget;
-		TAHN F 3 A_CustomMeleeAttack(random(1, 5) * 1, "Destruction/Small1");
-		TAHN G 3;
+		TAHN F 5 A_CustomMeleeAttack(random(1, 5) * 1, "Destruction/Small2");
+		TAHN G 5;
 		Goto See;
 	Missile:
 		   TAHN H 10 A_FaceTarget;
@@ -151,8 +151,8 @@ class Kohrak : ShotgunGuy replaces ShotgunGuy
 		Loop;
 	Melee:
 		KOHR E 5 A_FaceTarget;
-		KOHR F 3 A_SargAttack;
-		KOHR G 3;
+		KOHR F 5 A_CustomMeleeAttack(random(1, 5) * 1, "Destruction/Small2");
+		KOHR G 5;
 		goto See;
 	Missile:
 		   KOHR H 10 A_FaceTarget ;
@@ -185,3 +185,58 @@ class Kohrak : ShotgunGuy replaces ShotgunGuy
 		Goto See;
 	}
 }	
+Class LehvakKal : ChaingunGuy replaces ChaingunGuy
+{
+	Default
+	{
+		SeeSound "Kal/Wakeup" ;
+		AttackSound "Monsters/WeaponL3" ; 
+		//DeathSound "Bohrok/Wakeup";
+		Obituary " %o was cleansed by Lehvak-Kal!" ;
+		Tag "Lehvak-Kal" ;
+		XScale 0.6667;
+		YScale 0.8004;
+	}
+	States
+	{
+	Spawn:
+		LEHK AB 10 A_Look;
+		Loop;
+	See:
+		LEHK AABBCCDD 3 A_Chase;
+		Loop;
+	Missile:
+		LEHK H 10 A_FaceTarget;
+		LEHK IH 4 BRIGHT A_CPosAttack;
+		LEHK I 1 A_CPosRefire;
+		Goto Missile+1;
+	Pain:
+		LEHK J 3;
+		LEHK J 3 A_Pain;
+		Goto See;
+	Melee:
+		LEHK E 5 A_FaceTarget;
+		LEHK F 5 A_CustomMeleeAttack(random(1, 10) * 4, "Destruction/Small2");
+		LEHK G 5;
+		goto See;
+	Death:
+		LEHK K 5;
+		LEHK L 5 A_Scream;
+		LEHK M 5 A_NoBlocking;
+		LEHK NOP 5;
+		LEHK Q -1;
+		Stop;
+	XDeath:
+		LEHK R 5;
+		LEHK S 5 A_XScream;
+		LEHK T 5 A_NoBlocking;
+		LEHK UVW 5;
+		LEHK W -1;
+		Stop;
+	Raise:
+		LEHK P 5;
+		LEHK ONMLK 5;
+		Goto See;
+	}
+}
+		

@@ -339,11 +339,13 @@ class Cordak : Weapon
 {
 	Default
 	{
-		Weapon.SelectionOrder 750;
+		Weapon.SelectionOrder 701;
 		Weapon.BobStyle "Smooth";
 		Weapon.SlotNumber 4;
 		Weapon.AmmoUse 3;
+		Weapon.AmmoType "Clip";
 		Weapon.AmmoGive 30;
+		Weapon.SlotPriority 2;
 		Inventory.PickupMessage "You got the Cordak Blaster!";
 		Obituary "%o was blasted to bits by %k's Cordak Blaster!";
 		Tag "Cordak Blaster";
@@ -435,7 +437,7 @@ Class KanokaLauncher : Weapon
 		Loop;
 	Fire:
 		KNKL B 4;
-		KNKL C 0 A_PlaySound("Weapons/CordakFire", CHAN_WEAPON);
+		KNKL C 0 A_StartSound("Weapons/CordakFire", CHAN_AUTO, CHANF_OVERLAP);
 		KNKL C 6 A_FireProjectile("KanokaDisk", 0, 1, 0, 0);
 		KNKL DEFG 8;
 		KNKL H 4;
