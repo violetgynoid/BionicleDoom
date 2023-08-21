@@ -240,3 +240,15 @@ Class LehvakKal : ChaingunGuy replaces ChaingunGuy
 	}
 }
 		
+//Class PaintElemental : PainElemental replaces PainElemental
+	//{
+		//states
+		//{
+		//Missile:
+		//PAIN D 5 A_FaceTarget;
+		//PAIN E 5 A_FaceTarget;
+		//PAIN F 5 BRIGHT A_FaceTarget;
+		//PAIN F 0 BRIGHT A_PainAttack((Tahnok),); <= DOCUMENTATION SUCKS HOW DOES IT WORK
+		//Goto See;
+		//}
+	//}

@@ -6,8 +6,9 @@ class Lhikan : DoomPlayer
 		Player.DisplayName "Toa Lhikan";
 		Player.StartItem "LhikanSword";
 		Player.StartItem "Clip", 50;
-		Player.Face "HAU";
-		Scale 0.75;
+		Player.Face "LHF";
+		XScale 0.6667;
+		YScale 0.8004;
 		}
 		States
 		{
