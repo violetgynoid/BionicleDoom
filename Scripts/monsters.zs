@@ -62,7 +62,6 @@ Class VahkiDisk: Actor
     //DeathSound "";
     Projectile;
 	+RANDOMIZE
-    +StrifeDamage
     +HexenBounce
     +CanBounceWater
     +SkyExplode
@@ -252,3 +251,75 @@ Class LehvakKal : ChaingunGuy replaces ChaingunGuy
 		//Goto See;
 		//}
 	//}
+	
+Class Carapar : BaronOfHell replaces BaronOfHell
+{
+	Default
+	{
+		Obituary "Carapar's squid leeched the life from %o!";
+		HitObituary "A Creep from the Deep tore out your spine!";
+		Tag "Carapar";
+	}
+	States
+	{
+	Spawn:
+		CARA AB 10 A_Look;
+		Loop;
+	See:
+		CARA AABBCCDD 3 A_Chase;
+		Loop;
+	Melee:
+		CARA G 5;
+		CARA H 5 A_CustomMeleeAttack(random(1, 10) * 6, "Destruction/Small2");
+		Goto See;
+	Missile:
+		CARA E 16 A_FaceTarget;
+		CARA F 8 A_SpawnProjectile("Squid", 48, 3); // Update to custom missile once I get the squid working
+		Goto See;
+	Pain:
+		CARA I 2;
+		CARA I 2 A_Pain;
+		Goto See;
+	Death:
+		CARA J 6;
+		CARA K 6 A_Scream;
+		CARA L 6;
+		CARA M 6 A_NoBlocking;
+		CARA NOPQ 6;
+		CARA T -1 A_BossDeath;
+		Stop;
+	Raise:
+		CARA T 6;
+		CARA QPONMLK 6;
+		Goto See;
+	}
+}
+
+class Squid : Actor
+{
+  //int sticktimer;
+  //const MAXSTICKTIME = 35 * 5; // 5 seconds
+
+  Default
+  {
+    Projectile;
+    speed 20;
+    +HITTRACER
+	+NOGRAVITY
+  }
+
+  States {
+  Spawn:
+    SQUI A -1;
+    Loop;
+  // hit geometry:
+  Death:
+    SQUI BCD 4;
+    stop;
+  // hit a shootable actor:  
+  XDeath:
+    SQUI AB 3 A_Warp(AAPTR_TRACER, 24, 0, 0, 0, WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+	SQUI AB 3;
+	goto Death;
+  }
+}
