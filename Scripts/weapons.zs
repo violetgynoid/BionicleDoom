@@ -8,7 +8,8 @@ class TShotgun : Shotgun replaces Shotgun
 	Inventory.PickupMessage "You got the Technic Shotgun!";
 	Obituary "%o was blasted with the Technic Shotgun!";
 	Tag "Technic Shotgun";
-	Scale 0.6667;
+	XScale 0.6667;
+	YScale 0.8004;
 	Weapon.SlotNumber 3;
 	}
 	States
@@ -146,10 +147,9 @@ class LhikanSword : Weapon
 	Weapon.SelectionOrder 4190;
 	Weapon.Kickback 100;
     Inventory.PickupSound "Misc/W_PkUp";
-    Inventory.PickupMessage "You got your Twin Cutter!";
-    Obituary "%o was shredded by the Twin Cutters!"; 
+    Inventory.PickupMessage "You got your Fire Greatswords!";
+    Obituary "%o was defeated with Lhikan's Toa Tools!"; 
 	Weapon.SlotNumber 1;
-	+WEAPON.WIMPY_WEAPON
 	+WEAPON.MELEEWEAPON
 	}
 	states
@@ -346,6 +346,8 @@ class Cordak : Weapon
 		Weapon.AmmoType "Clip";
 		Weapon.AmmoGive 30;
 		Weapon.SlotPriority 2;
+		Weapon.WeaponScaleX 0.6667;
+		Weapon.WeaponScaley 0.8005;
 		Inventory.PickupMessage "You got the Cordak Blaster!";
 		Obituary "%o was blasted to bits by %k's Cordak Blaster!";
 		Tag "Cordak Blaster";
@@ -363,16 +365,19 @@ class Cordak : Weapon
 		Loop;
 	Fire:
 		CDKB A 0 A_PlaySound("Weapons/Cordak2", CHAN_WEAPON);
-		CDKB A 2;
-		CDKF A 5 A_FireProjectile("CordakRocket", 0, 1, 0, 0);
-		CDKF B 5;
-		CDKB B 2;
-		CDKB B 0 A_ReFire;
+		CDKB B 5;
+		CDKF A 3 A_FireProjectile("CordakRocket", 0, 1, 0, 0);
+		CDKF B 3;
+		CDKF C 3;
+		CDKB C 5;
+		CDKB D 5;
+		CDKB A 3;
+		CDKB A 0 A_ReFire;
 		Goto Ready;
 	Flash:
-		CDKF A 5 Bright A_Light1;
-		Goto LightDone;
-		CDKF B 5 Bright A_Light2;
+		CDKF B 3 Bright A_Light1;
+		CDKF C 3 Bright A_Light2;
+		CDKF D 3 Bright A_Light2;
 		Goto LightDone;
 	Spawn:
 		MGUN A -1;
@@ -386,7 +391,7 @@ Class CordakRocket : FastProjectile
 	Projectile;
 	Radius 7;
 	Height 8;
-	Speed 70;
+	Speed 50;
 	Damage 5;
 	+RANDOMIZE
 	+ZDOOMTRANS
