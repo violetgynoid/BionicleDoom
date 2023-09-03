@@ -1,9 +1,17 @@
-map MAP01 "MAP01"
+map MAP01 "Tidal Caves"
 {
 	music = "killing_machines_mix"
 	next = MAP02
 	sky1 = "DSSKY1"
 }
+
+map MAP02 "Twin Waterfalls"
+{
+	music = "Kumo_Rocks_Mix"
+	next = MAP03
+	sky1 = "DSSKY1"
+}
+
 gameinfo
 	{
 	ForceTextInMenus = true
