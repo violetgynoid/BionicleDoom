@@ -393,6 +393,8 @@ Class CordakRocket : FastProjectile
 	Height 8;
 	Speed 50;
 	Damage 5;
+	XScale 0.6667;
+	YScale 0.8004;
 	+RANDOMIZE
 	+ZDOOMTRANS
 	}
@@ -402,10 +404,10 @@ Class CordakRocket : FastProjectile
 			CDKR A 1 Bright;
 			Loop;
 		Death:
-			CDKE A 8 Bright;
-			CDKE B 0 Bright A_Explode(30, 64);
-			CDKE B 6 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
-			CDKE C 4 Bright;
+			CDKR B 8 Bright;
+			CDKR B 0 Bright A_Explode(30, 64);
+			CDKR C 6 Bright A_PlaySound("Weapons/Explode2", CHAN_WEAPON);
+			CDKR D 6 Bright;
 			Stop;
 		}
 }
